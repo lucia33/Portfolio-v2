@@ -1,0 +1,78 @@
+body {
+  padding: 50px;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*Center navbar*/
+.navbar-collapse {
+  text-align: center; 
+  /*display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;*/
+}
+
+.navbar-nav {
+  display: inline-block;
+  float: none;
+  margin: 0;
+}
+
+/*change navbar font color*/
+.navbar-inverse .navbar-nav>li>a { 
+  color: #FFFFFF;
+}
+.navbar-inverse .navbar-nav>li>a:hover { 
+  color: #080808;
+}
+
+/*Transparent navbar*/
+.navbar-transparent {
+    background:transparent;
+    background-image: none;
+    border-color: transparent;
+}
+
+html,body {
+  height:100%;
+  background:center no-repeat fixed url('http://i359.photobucket.com/albums/oo33/Chang_Liu/DSC00352-2_zps1bdilprm.jpg');
+  background-size: cover;
+  color:#FFFFFF;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+}
+
+/*Center main message*/
+.centered {
+  position: absolute; /* or absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#intro {
+  font-size: 30px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+/*button{
+  margin-left:47%;
+  margin-right:53%;
+  position: relative;
+  float: none;
+  text-align: center;
+  margin: 0 auto;
+}*/
+
+/* pull center*/
+.centerize{
+  text-align: center;
+}
