@@ -1,0 +1,54 @@
+<% include partials/header.ejs %>
+     <!--<main class="container centerize">
+      <h1 class="centerize">Please Login</h1>
+      <div class="centerize col-sm-4">
+           <form method="post">
+               <div class="col-md-6 centerize">
+                <div class="form-group">
+                    <label>Username:</label>
+                    <input type="text" class="form-control" name="username" required autofocus/>
+                 </div>
+                 <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" class="form-control" name="password" required/>
+                    or <a href="/register">Register</a>
+                </div>
+                <div class="form-group text-right">
+                    <input type="submit" class="btn btn-success" value="Log In"/>
+               </div>
+               </div>
+            </form>
+         </div>
+    </main>-->
+    
+    <h1 class="centerize">Please Login</h1>
+    <div class="row">
+        <!-- Login Form -->
+        <div class="col-md-4 col-md-offset-4 centerize">            
+            <form action="post">
+                <div class="form-group">
+                    <div class="controls">
+                        <label>Username: </label>
+                        <input type="text" class="form-control" name="name" required autofocus />
+                        <p class="help-block"></p>
+                    </div>
+                </div>     
+                <div class="form-group">
+                    <div class="controls">
+                        <label>Password: </label>
+                        <input type="password" class="form-control" name="password" required />
+                        <!--Register Function to be built-->
+                        <!--or <a href="/register">Register</a>-->
+                        <p class="help-block"></p>
+                    </div>
+                </div>        
+                <div class="form-group centerize">
+                    <input type="submit" class="btn btn-success" value="Login">
+                </div>
+            </form> 
+        </div> 
+        <!-- end of form -->
+    </div>
+    <!-- end of div row -->
+    
+<% include partials/footer.ejs %>
