@@ -20,7 +20,7 @@ function requireAuth(req, res, next){
   next();
 }
 
-/* Render Users main page. */
+/* Render Business Contact List. */
 router.get('/', requireAuth, function (req, res, next) {
     User.find(function (err, users) {
         if (err) {
@@ -28,8 +28,8 @@ router.get('/', requireAuth, function (req, res, next) {
             res.end(err);
         }
         else {
-            res.render('users/index', {
-                title: 'Users',
+            res.render('/business-contact', {
+                title: 'Business Contact List',
                 users: users,
                 displayName: req.user ? req.user.displayName : ''
             });
