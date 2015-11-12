@@ -1,47 +1,42 @@
-<% include ./partials/header.ejs %>
+<% include ../partials/header.ejs %>
 
 <main class="container">
-    <h1>Users</h1>
+    <h1>Business Contact</h1>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a href="/users/add" title="Add User"><i class="fa fa-plus-circle"></i> Add a new User</a>
+            <a href="/businesscontacts/add" title="Add Contact"><i class="fa fa-plus-circle"></i> Add a new User</a>
         </div> <!-- panel-heading -->
-        <% if (users.length > 0) { %>
+        <% if (businesscontacts.length > 0) { %>
         <div class="panel-body table-responsive">
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>User</th>
-                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Phone</th>
                         <th>Date Created</th>
-                        <th>Date Updated</th>
                         <th></th>
                     </tr>
                 </thead>
                 </tbody>
-                <% for (var i = 0; i < users.length; i++) { %>
+                <% for (var i = 0; i < businesscontacts.length; i++) { %>
                 <tr>
                     <td>
-                        <%= users[i].displayName %>
+                        <%= businesscontacts[i].name %>
                     </td>
                     <td>
-                        <%= users[i].email %>
+                        <%= businesscontacts[i].phone %>
                     </td>
                     <td>
-                        <% var date = new Date(users[i].created);
+                        <% var date = new Date(businesscontacts[i].created);
                          var dateString = date.toDateString() + " " + date.toLocaleTimeString(); %>
                         <%= dateString %>
-                    </td>
+                    </td>                    
                     <td>
-                        <% date = new Date(users[i].updated);
-                         var dateString = date.toDateString() + " " + date.toLocaleTimeString(); %>
-                        <%= dateString %>
-                    </td>
-                    <td>
-                        <a href="/users/<%= users[i]._id %>" title="Edit" class="btn btn-primary">
+                        <a href="/businesscontacts/<%= businesscontacts[i]._id %>" title="Edit" class="btn btn-primary">
                             <i class="fa fa-pencil-square-o"></i>
                         </a>
-                        <a href="/users/delete/<%= users[i]._id %>" title="Delete" onclick="return confirm('Are you sure you want to delete this?');" class="btn btn-danger">
+                        <a href="/businesscontacts/delete/<%= businesscontacts[i]._id %>" title="Delete" onclick="return confirm('Are you sure you want to delete this?');" class="btn btn-danger">
                             <i class="fa fa-trash-o"></i>
                         </a>
                     </td>   
@@ -54,4 +49,4 @@
     </div><!-- panel panel-default -->
 
 </main>
-<% include ./partials/footer.ejs %>
+<% include ../partials/footer.ejs %>

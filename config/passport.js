@@ -26,9 +26,8 @@ module.exports = function(passport) {
 		
 		//asynchronous process
 		process.nextTick(function() {
-			User.findOne({
-				'username': username
-			}), function(err, user) {
+			User.findOne({'username': username}, 
+			function(err, user) {
 				if(err) {
 					return done(err);
 				}
@@ -45,7 +44,7 @@ module.exports = function(passport) {
 				
 				// everything is ok - proceed with login
 				return done(null, user);
-			}
+			});
 		});
 	}));
 	
@@ -56,7 +55,7 @@ module.exports = function(passport) {
 	function(req, username, password, done) {
 		
 		//asynchronous process
-		process.nextTick(function(){
+		process.nextTick(function() {
 			//if the user is not already logged in:
 			if(!req.user) {
 				User.findOne({'username': username},
@@ -91,4 +90,4 @@ module.exports = function(passport) {
 			}
 		});
 	}));
-}
+};

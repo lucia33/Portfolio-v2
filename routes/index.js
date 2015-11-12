@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 var User = require('../models/user');
+var Businesscontact = require('../models/businesscontact');
 
 // GET about page
 router.get('/about', function(req, res, next) {
@@ -25,9 +26,10 @@ router.get('/services', function(req, res, next) {
 	res.render('services', { title: 'Services'});
 })
 
-// router.get('/business-contact', function(req, res, next) {
-// 	res.render('business-contact', { title: 'Services'});
-// })
+// GET business contact page
+router.get('/businesscontacts', function(req, res, next) {
+	res.render('businesscontacts', { title: 'Business Contact'});
+})
 
 /* Render home page. */
 router.get('/', function (req, res, next) {
@@ -43,17 +45,17 @@ router.get('/login', function (req, res, next) {
         res.render('login', {
             title: 'Login',
             messages: req.flash('loginMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            // displayName: req.user ? req.user.displayName : ''
         });
     }
     else {
-        return res.redirect('/about');
+        return res.redirect('/businesscontacts');
     }
 });
 
 /* Process the Login Request */
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/about',
+    successRedirect: '/businesscontacts',
     failureRedirect: '/login',
     failureFlash: true
 }));
@@ -64,7 +66,7 @@ router.get('/register', function (req, res, next) {
         res.render('register', {
             title: 'Register',
             messages: req.flash('registerMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            // displayName: req.user ? req.user.displayName : ''
         });
     }
     else {
@@ -75,7 +77,7 @@ router.get('/register', function (req, res, next) {
 /* POST signup data. */
 router.post('/register', passport.authenticate('local-registration', {
     //Success go to Profile Page / Fail go to Signup page
-    successRedirect : '/about',
+    successRedirect : '/businesscontacts',
     failureRedirect : '/register',
     failureFlash : true
 }));

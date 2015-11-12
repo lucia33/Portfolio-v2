@@ -1,4 +1,4 @@
-var express = require('express');
+express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -19,9 +19,11 @@ mongoose.connection.on('error', function() {
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var about = require('./routes/about');
+var businesscontacts = require(('./routes/businesscontacts'));
 
 var app = express();
+
+require('./config/passport')(passport);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,7 +50,7 @@ app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/about', about);
+app.use('/businesscontacts', businesscontacts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
