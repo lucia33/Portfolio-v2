@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
+var mongoose = require('mongoose');
 var User = require('../models/user');
 var Businesscontact = require('../models/businesscontact');
 
@@ -27,9 +28,9 @@ router.get('/services', function(req, res, next) {
 })
 
 // GET business contact page
-router.get('/businesscontacts', function(req, res, next) {
-	res.render('businesscontacts', { title: 'Business Contact'});
-})
+// router.get('/businesscontacts', function(req, res, next) {
+// 	res.render('businesscontacts', { title: 'Business Contact'});
+// })
 
 /* Render home page. */
 router.get('/', function (req, res, next) {

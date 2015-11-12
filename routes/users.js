@@ -8,6 +8,7 @@ var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 
+var mongoose = require('mongoose');
 var User = require('../models/user');
 
 /* Utility functin to check if user is authenticatd */
