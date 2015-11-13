@@ -27,10 +27,6 @@ router.get('/services', function(req, res, next) {
 	res.render('services', { title: 'Services'});
 })
 
-// GET business contact page
-// router.get('/businesscontacts', function(req, res, next) {
-// 	res.render('businesscontacts', { title: 'Business Contact'});
-// })
 
 /* Render home page. */
 router.get('/', function (req, res, next) {

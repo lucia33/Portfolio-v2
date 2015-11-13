@@ -1,14 +1,7 @@
-
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
-
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 
-var mongoose = require('mongoose');
 var User = require('../models/user');
 
 /* Utility functin to check if user is authenticatd */
@@ -21,7 +14,7 @@ function requireAuth(req, res, next){
   next();
 }
 
-/* Render Business Contact List. */
+/* Render Users main page. */
 router.get('/', requireAuth, function (req, res, next) {
     User.find(function (err, users) {
         if (err) {
@@ -29,14 +22,16 @@ router.get('/', requireAuth, function (req, res, next) {
             res.end(err);
         }
         else {
-            res.render('/business-contact', {
-                title: 'Business Contact List',
+            res.render('users/index', {
+                title: 'Users',
                 users: users,
                 displayName: req.user ? req.user.displayName : ''
             });
         }
     });
 });
+
+// add,edit,delete
 
 /* Render the Add Users Page */
 router.get('/add', requireAuth, function (req, res, next) {
