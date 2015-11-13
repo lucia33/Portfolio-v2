@@ -31,7 +31,7 @@ router.get('/', requireAuth, function (req, res, next) {
                 // displayName: req.businesscontact ? req.businesscontact.displayName : ''
             });
         }
-    });
+    }).sort({name:1}); //sort the documents in order by column "name"
 });
 
 // add,edit,delete
@@ -47,7 +47,6 @@ router.get('/add', requireAuth, function (req, res, next) {
 /* process the submission of a new businesscontact */
 router.post('/add', requireAuth, function (req, res, next) {
     var businesscontact = new Businesscontact(req.body);
-    // var hashedPassword = businesscontact.generateHash(businesscontact.password);
     Businesscontact.create({
         name: req.body.name,
         phone: req.body.phone,
