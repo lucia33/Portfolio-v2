@@ -1,10 +1,10 @@
 // Import mongoose
 var mongoose = require('mongoose');
 
-// need an alias for mongoose.Schema
+// Alias for mongoose.Schema
 var Schema = mongoose.Schema;
 
-// Define our user Schema
+// Define Schema
 var BCSchema = new Schema({
 	name: String,
 	phone: String,

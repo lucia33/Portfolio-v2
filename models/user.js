@@ -1,11 +1,11 @@
-// Import mongoose and bcrypt
+// Import mongoose and bcrypt(for hashing password)
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
-// need an alias for mongoose.Schema
+// Alias for mongoose.Schema
 var Schema = mongoose.Schema;
 
-// Define our user Schema
+// Define user Schema
 var UserSchema = new Schema({
 	username: String,
 	password: String,

@@ -46,7 +46,7 @@ router.get('/login', function (req, res, next) {
         res.render('login', {
             title: 'Login',
             messages: req.flash('loginMessage'),
-            // displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : ''
         });
     }
     else {
@@ -67,7 +67,7 @@ router.get('/register', function (req, res, next) {
         res.render('register', {
             title: 'Register',
             messages: req.flash('registerMessage'),
-            // displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : ''
         });
     }
     else {

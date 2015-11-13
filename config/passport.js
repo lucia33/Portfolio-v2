@@ -1,7 +1,7 @@
-// define our local strategy
+// define local strategy
 var LocalStrategy = require('passport-local').Strategy;
 
-// import the User Model
+// import the user Model (used for validation)
 var User = require('../models/user');
 
 // pass in reference to passport from app.js
@@ -48,7 +48,7 @@ module.exports = function(passport) {
 		});
 	}));
 	
-	//Configure registration local strategy
+	// configure registration local strategy
 	passport.use('local-registration', new LocalStrategy({
 		passReqToCallback: true
 	},
