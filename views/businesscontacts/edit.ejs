@@ -5,15 +5,15 @@
         <form method="post">
             <fieldset class="form-group">
                 <label for="name">Name: *</label>
-                <input name="name" type="text" class="form-control" required value="<%= businesscontacts.email %>" autofocus />
+                <input name="name" type="text" class="form-control" required value="<%= businesscontacts.name %>" autofocus />
             </fieldset>
             <fieldset class="form-group">
                 <label for="phone">Phone: *</label>
-                <input name="phone" type="text" class="form-control" required value="<%= businesscontacts.username %>" />
+                <input name="phone" type="text" class="form-control" required value="<%= businesscontacts.phone %>" />
             </fieldset>
             <fieldset class="form-group">
                 <label for="email">Email: *</label>
-                <input name="email" type="email" class="form-control" required value="<%= businesscontacts.password %>"/>
+                <input name="email" type="email" class="form-control" required value="<%= businesscontacts.email %>"/>
             </fieldset>            
             <fieldset class="form-group text-right">
                 <button type="submit" class="btn btn-primary" title="Update">

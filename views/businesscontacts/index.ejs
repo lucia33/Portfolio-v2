@@ -1,19 +1,19 @@
 <% include ../partials/header.ejs %>
 
 <main class="container">
-    <h1>Business Contact</h1>
+    <h1 class="centerize">Business Contact</h1>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a href="/businesscontacts/add" title="Add Contact"><i class="fa fa-plus-circle"></i> Add a new User</a>
+            <a href="/businesscontacts/add" title="Add Contact"><i class="fa fa-plus-circle"></i> Add a New Contact</a>
         </div> <!-- panel-heading -->
         <% if (businesscontacts.length > 0) { %>
         <div class="panel-body table-responsive">
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Phone</th>
-                        <th>Phone</th>
+                        <th>Email</th>
                         <th>Date Created</th>
                         <th></th>
                     </tr>
@@ -26,6 +26,9 @@
                     </td>
                     <td>
                         <%= businesscontacts[i].phone %>
+                    </td>
+                    <td>
+                        <%= businesscontacts[i].email %>
                     </td>
                     <td>
                         <% var date = new Date(businesscontacts[i].created);
