@@ -8,23 +8,35 @@ var Businesscontact = require('../models/businesscontact');
 
 // GET about page
 router.get('/about', function(req, res, next) {
-	res.render('about', { title: 'About'});
+	res.render('about', { 
+        title: 'About',
+        displayName: req.user ? req.user.displayName : ''
+    });
 });
 
 
 // GET contact page
 router.get('/contact', function(req, res, next) {
-	res.render('contact', { title: 'Contact Me'});
+	res.render('contact', { 
+        title: 'Contact Me',
+        displayName: req.user ? req.user.displayName : ''
+    });
 });
 
 // GET projects page
 router.get('/projects', function(req, res, next) {
-	res.render('projects', { title: 'Projects'});
+	res.render('projects', { 
+        title: 'Projects',
+        displayName: req.user ? req.user.displayName : ''
+    });
 });
 
 // GET services page
 router.get('/services', function(req, res, next) {
-	res.render('services', { title: 'Services'});
+	res.render('services', { 
+        title: 'Services',
+        displayName: req.user ? req.user.displayName : ''
+    });
 })
 
 

@@ -28,7 +28,7 @@ router.get('/', requireAuth, function (req, res, next) {
             res.render('businesscontacts/index', {
                 title: 'Business Contact',
                 businesscontacts: businesscontacts,
-                // displayName: req.businesscontact ? req.businesscontact.displayName : ''
+                displayName: req.user ? req.user.displayName : ''
             });
         }
     }).sort({name:1}); //sort the documents in order by column "name"
@@ -40,7 +40,7 @@ router.get('/', requireAuth, function (req, res, next) {
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('businesscontacts/add', {
         title: 'Add a contact',
-        // displayName: req.businesscontact ? req.businesscontact.displayName : ''
+        displayName: req.user ? req.user.displayName : ''
     });
 });
 
@@ -78,7 +78,7 @@ router.get('/:id', requireAuth, function (req, res, next) {
             res.render('businesscontacts/edit', {
                 title: 'Edit a contact',
                 businesscontacts: businesscontacts,
-                // displayName: req.businesscontact ? req.businesscontact.displayName : ''
+                displayName: req.user ? req.user.displayName : ''
             });
         }
     });

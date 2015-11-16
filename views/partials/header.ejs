@@ -31,8 +31,15 @@
       <li><a href="/projects">Projects</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/logout">Logout</a></li>
+      <!-- Login / Logout options based on login status -->
+      <% if (displayName) { %>            
+            <li class="navbar-text">Hello,
+              <%= displayName %>
+            </li> 
+            <li><a href="/logout">Logout</a></li>
+            <% } else { %>
+            <li><a href="/login">Login</a></li>
+            <% } %>
     </ul>
   </nav>
 </div>
