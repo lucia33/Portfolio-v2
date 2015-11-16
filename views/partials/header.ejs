@@ -31,6 +31,16 @@
       <li><a href="/projects">Projects</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/contact">Contact</a></li>
+      <% if (displayName) { %>
+            <% if(title == "Users" ) { %>
+            <li class="active">
+              <% } else { %>
+            <li>
+              <% } %>
+              <a href="/users">Users</a></li>
+            <li class="navbar-text">Hello,
+              <%= displayName %>
+            </li>
       <li><a href="/login">Login</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
