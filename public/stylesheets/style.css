@@ -81,3 +81,14 @@ footer {
 .panel {
   background-color: transparent;
 }
+
+/*restyle active*/
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  color: black;
+  background-color: transparent !important;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
+  -webkit-box-shadow: none;
+  background-image: none;
+}
