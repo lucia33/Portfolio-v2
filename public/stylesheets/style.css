@@ -75,6 +75,9 @@ footer {
 /* pull center*/
 .centerize{
   text-align: center;
+  margin: auto;
+  float: none;
+  margin: 0 auto;
 }
 
 /*restyle table*/
