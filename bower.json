@@ -1,0 +1,27 @@
+{
+  "name": "Portfolio",
+  "description": "",
+  "main": "",
+  "authors": [
+    "lucia33 <liu_chang2010@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lucia33/Portfolio-v2",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "font-awesome": "~4.4.0",
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "bootstrap": "~3.3.5"
+  }
+}
