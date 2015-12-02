@@ -10,13 +10,14 @@
   <meta charset="utf-8">  
   <!-- Scale for device responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title><%= title %></title>
   <!-- CSS Section -->
   <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
   <!-- Custom CSS -->
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title><%= title %></title>
+  
 </head>
 
 <body>
@@ -73,6 +74,13 @@
                 <% } %>
                 <a href="/login">Login</a></li>
             <% } %>
+      <!-- Todo List -->
+      <% if (title == "Todo List") { %>
+      <li class="active">
+        <% } else { %>
+        <li>
+        <% } %>
+        <a href="/todos">Todo List</a></li>
     </ul>
   </nav>
 </div>

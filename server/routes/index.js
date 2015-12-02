@@ -4,7 +4,17 @@ var passport = require('passport');
 
 var mongoose = require('mongoose');
 var User = require('../models/user');
-var Businesscontact = require('../models/businesscontact');
+// var Businesscontact = require('../models/businesscontact');
+// var Todo = require('../models/todo');
+
+/* Utility functin to check if todo is authenticatd */
+function requireAuth(req, res, next){
+  // check if the todo is logged in
+  if(!req.isAuthenticated()){
+    res.redirect('/login');
+  }
+  next();
+};
 
 // GET about page
 router.get('/about', function(req, res, next) {
@@ -96,6 +106,15 @@ router.post('/register', passport.authenticate('local-registration', {
 router.get('/logout', function (req, res){
   req.logout();
   res.redirect('/');
+});
+
+/* GET todo list page. */
+router.get('/todos', requireAuth, function(req, res, next) {
+  res.render('todos/index', { 
+      title: 'Todo List',
+      displayName: req.user ? req.user.displayName : '',
+      username: req.user ? req.user.username : '' 
+  });
 });
 
 module.exports = router;
