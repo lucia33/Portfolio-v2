@@ -21,13 +21,14 @@ mongoose.connection.on('error', function() {
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
 var businesscontacts = require(('./server/routes/businesscontacts'));
+var todos = require(('./server/routes/todos'));
 
 var app = express();
 
 require('./server/config/passport')(passport);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'server/views'));
+app.set('views', path.join(__dirname, './server/views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
@@ -51,6 +52,7 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/businesscontacts', businesscontacts);
+app.use('/todos', todos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

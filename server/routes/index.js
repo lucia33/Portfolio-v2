@@ -109,7 +109,7 @@ router.get('/logout', function (req, res){
 });
 
 /* GET todo list page. */
-router.get('/todos', requireAuth, function(req, res, next) {
+router.get('/todoList', requireAuth, function(req, res, next) {
   res.render('todos/index', { 
       title: 'Todo List',
       displayName: req.user ? req.user.displayName : '',
