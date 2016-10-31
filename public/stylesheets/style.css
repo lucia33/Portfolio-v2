@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
 }
@@ -21,15 +21,23 @@ a {
   display: inline-block;
   float: none;
   margin: 0;
+  padding-top: 50px;
 }
 
 /*change navbar font color*/
 .navbar-inverse .navbar-nav>li>a { 
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 16px;
+  /*font-family: 'Julius Sans One', sans-serif;*/
 }
 .navbar-inverse .navbar-nav>li>a:hover { 
   color: #080808;
+  -webkit-transition: 0.3s ease all;
+  -o-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
+
 
 /*Transparent navbar*/
 .navbar-transparent {
@@ -55,12 +63,25 @@ html,body {
 }
 
 #intro {
-  font-size: 30px;
+  font-size: 66px;
+  font-family: 'Sacramento', cursive;
+  /*font-family: 'Dancing Script', cursive;*/
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
+.footerIcons a{
+  color: #fff;
+  padding: 10px;
+}
+.footerIcons a:hover{
+  color: black;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
 }
 
 /*button{
