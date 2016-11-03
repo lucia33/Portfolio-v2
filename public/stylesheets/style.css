@@ -48,7 +48,7 @@ a {
 
 html,body {
   height:100%;
-  background:center no-repeat fixed url('http://i359.photobucket.com/albums/oo33/Chang_Liu/DSC00352-2_zps1bdilprm.jpg');
+  background:center no-repeat fixed url('../images/blue_bg.jpg');
   background-size: cover;
   color:#FFFFFF;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
