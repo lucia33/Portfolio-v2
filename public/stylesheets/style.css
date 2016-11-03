@@ -78,7 +78,8 @@ footer {
   padding: 10px;
 }
 .footerIcons a:hover{
-  color: black;
+  /*color: black;*/
+  color:#5e82a4;
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
@@ -108,7 +109,8 @@ footer {
 
 /*restyle active*/
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-  color: black;
+  /*color: black;*/
+  color: #5e82a4;
   background-color: transparent !important;
 }
 
