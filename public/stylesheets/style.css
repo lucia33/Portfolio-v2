@@ -9,6 +9,10 @@ a {
 }
 
 /*Center navbar*/
+.navbar-inverse {
+  background: transparent;
+  border: none;
+}
 .navbar-collapse {
   text-align: center; 
   /*display: block !important;
@@ -17,11 +21,16 @@ a {
   overflow: visible !important;*/
 }
 
+
+@media screen and (min-width: 768px){
+  .navbar-nav{
+    padding-top: 20px;
+  }
+}
 .navbar-nav {
   display: inline-block;
   float: none;
   margin: 0;
-  padding-top: 50px;
 }
 
 /*change navbar font color*/
@@ -32,7 +41,7 @@ a {
   /*font-family: 'Julius Sans One', sans-serif;*/
 }
 .navbar-inverse .navbar-nav>li>a:hover { 
-  color: #080808;
+  color: #4f7192;
   -webkit-transition: 0.3s ease all;
   -o-transition: 0.3s ease all;
   transition: 0.3s ease all;
@@ -61,17 +70,23 @@ html,body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.paddedBlocks>div {
+  padding-bottom:30px;
+}
 
 #intro {
   font-size: 66px;
-  font-family: 'Sacramento', cursive;
+  font-family: 'Clicker Script', cursive;
+  /* font-family: 'Sacramento', cursive; */
   /*font-family: 'Dancing Script', cursive;*/
 }
 
 footer {
   position: fixed;
-  bottom: 10px;
+  bottom: 0px;
+  padding-bottom: 10px;
   width: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 .footerIcons a{
   color: #fff;
@@ -117,6 +132,11 @@ footer {
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
   -webkit-box-shadow: none;
   background-image: none;
+}
+
+/* main contents */
+.mainCont {
+  padding: 30px 0px 80px;
 }
 
 /*Styling Todo List - Completed*/

@@ -42,12 +42,12 @@ router.get('/projects', function(req, res, next) {
 });
 
 // GET services page
-router.get('/services', function(req, res, next) {
-	res.render('services', { 
-        title: 'Services',
+router.get('/ido', function(req, res, next) {
+    res.render('ido', { 
+        title: 'I Do',
         displayName: req.user ? req.user.displayName : ''
     });
-})
+});
 
 
 /* Render home page. */
