@@ -1,6 +1,6 @@
 	<footer class="footer">
         <div class="container centerize">
-            <p> Chang Liu &copy Copyright 2015</p>
+            <p> Chang Liu &copy Copyright 2014-2017</p>
             <div class="footerIcons">
                 <a href="https://www.facebook.com/chang.liu.50767"><i class="fa fa-facebook fa-2x"></i></a>
                 <a href="https://instagram.com/lucia_2010_3/"><i class="fa fa-instagram fa-2x"></i></a>
@@ -12,5 +12,72 @@
         </div>
     </footer>
 
+<script type="text/javascript">
+
+$(document).ready(function(){
+    var my_posts = $("[rel=tooltip]");
+
+    var size = $(window).width();
+    for(i=0;i<my_posts.length;i++){
+        the_post = $(my_posts[i]);
+
+        if(the_post.hasClass('invert') && size >=767 ){
+            the_post.tooltip({ placement: 'left'});
+            the_post.css("cursor","pointer");
+        }else{
+            the_post.tooltip({ placement: 'rigth'});
+            the_post.css("cursor","pointer");
+        }
+    }
+});
+
+$(document).ready(function () {
+
+   
+
+    $(document).on("scroll", onScroll);
+    
+    //smoothscroll
+    $('.nav-link,.scrollDown').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
+        
+        $('.nav-link').each(function () {
+            $(this).parent().removeClass('active');
+        })
+        $(this).parent().addClass('active');
+      
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top+2
+        }, 500, 'swing', function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
+    });
+});
+
+function onScroll(event){
+    var scrollPos = $(document).scrollTop();
+    $('.nav-link').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('nav ul li a').removeClass("active");
+            currLink.addClass("active");
+            $('.nav-item').removeClass("active");
+            currLink.parent().addClass("active");
+        }
+        else{
+            currLink.removeClass("active");
+            currLink.parent().removeClass("active");
+        }
+    });
+}
+</script>
+
   </body>
+
 </html>
